@@ -12,10 +12,10 @@ logger = logging.getLogger(__name__)
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 MARGIN = 30
-SCREEN_TITLE = "Particle Exercise"
+SCREEN_TITLE = "Particle Exercise - ITS SUPPOSED TO BE FIRE"
 
 PARTICLE_MIN_SCALE = 0.01
-PARTICLE_MAX_SCALE = 0.08
+PARTICLE_MAX_SCALE = 0.1
 PARTICLE_MIN_X = -20
 PARTICLE_MAX_X = 20
 PARTICLE_VELOCITY_X = 0
@@ -25,7 +25,7 @@ PARTICLE_MAX_AX = 0.1
 PARTICLE_MIN_AY = -0.1
 PARTICLE_MAX_AY = 0.1
 PARTICLE_MIN_DECAY = 0.001
-PARTICLE_MAX_DECAY = 0.01
+PARTICLE_MAX_DECAY = 0.0011
 
 
 class Particle(arcade.Sprite):
@@ -46,11 +46,11 @@ class Particle(arcade.Sprite):
             ,(open_color.red_3, 6)
             ,(open_color.red_2, 7)
             ,(open_color.red_1, 8)
-            ,(open_color.teal_1, 8)
-            ,(open_color.teal_2, 7)
-            ,(open_color.teal_3, 6)
-            ,(open_color.teal_4, 5)
-            ,(open_color.teal_5, 4)
+            ,(open_color.orange_1, 8)
+            ,(open_color.orange_2, 7)
+            ,(open_color.orange_3, 6)
+            ,(open_color.orange_4, 5)
+            ,(open_color.orange_5, 4)
         ]
         (self.color, self.lifetime) = self.particle_colors[self.color_pos]
         self.alive = True
@@ -110,7 +110,7 @@ class Window(arcade.Window):
             decay = random.uniform(PARTICLE_MIN_DECAY,PARTICLE_MAX_DECAY)
             scale = random.uniform(PARTICLE_MIN_SCALE,PARTICLE_MAX_SCALE)
             #Particle(asset, sprite scale, initial position [x], initial position [y], velocity [x], velocity [y], acceleration [x], acceleration [y], scale decay)
-            particle = Particle('circle_05',scale,x,y,dx,dy,ax,ay,decay)
+            particle = Particle('flame_04',scale,x,y,dx,dy,ax,ay,decay)
 
             self.particle_list.append(particle)
 
